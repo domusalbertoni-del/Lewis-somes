@@ -32,7 +32,7 @@ export default function VideoReel() {
       </div>
 
       {/* Horizontal scroll strip */}
-      <div className="flex gap-4 md:gap-6 px-6 md:px-10 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide"
+      <div className="flex justify-center gap-4 md:gap-6 px-6 md:px-10 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide"
         style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
       >
         {videos.map((src, i) => (
