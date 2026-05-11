@@ -4,62 +4,66 @@ export default function Hero() {
   return (
     <section
       id="inicio"
-      className="relative min-h-screen flex flex-col items-center justify-center px-6 overflow-hidden"
+      className="relative h-screen flex items-end overflow-hidden"
     >
-      {/* Red glow behind logo */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/15 rounded-full blur-[120px] pointer-events-none" />
-
-      {/* Chrome LS logo */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.8, ease: 'easeOut' }}
-        className="relative z-10 mb-8"
-      >
+      {/* Full-bleed background image */}
+      <div className="absolute inset-0">
         <img
           src="/assets/FONDO-DE-PANTALLA-1.jpg.jpeg"
-          alt="Lewis Somes Logo"
-          className="w-64 md:w-80 lg:w-96 rounded-2xl shadow-2xl"
+          alt=""
+          className="w-full h-full object-cover"
         />
-      </motion.div>
+        {/* Dark gradient from bottom */}
+        <div className="absolute inset-0 bg-gradient-to-t from-bg via-bg/70 to-transparent" />
+        {/* Red tint at top */}
+        <div className="absolute inset-0 bg-gradient-to-b from-red/8 to-transparent" />
+      </div>
 
-      {/* Title */}
-      <motion.h1
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.3 }}
-        className="relative z-10 text-5xl md:text-7xl lg:text-8xl font-black tracking-tight text-center"
-      >
-        LEWIS SOMES
-      </motion.h1>
-
-      <motion.p
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.5 }}
-        className="relative z-10 text-accent font-semibold tracking-[0.3em] uppercase text-sm md:text-base mt-4"
-      >
-        Reggaeton Chileno
-      </motion.p>
-
-      {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2 }}
-        className="absolute bottom-10 z-10"
-      >
+      {/* Content pinned to bottom-left */}
+      <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 md:px-10 pb-16 md:pb-24">
         <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ repeat: Infinity, duration: 1.5, ease: 'easeInOut' }}
-          className="flex flex-col items-center gap-2 text-text-muted"
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
-          <span className="text-xs tracking-widest uppercase">Scroll</span>
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" className="text-text-muted">
-            <path d="M10 4v12m0 0l-4-4m4 4l4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
+          <p className="text-red text-xs md:text-sm font-bold tracking-[0.3em] uppercase mb-4">
+            Reggaeton Chileno
+          </p>
+
+          <h1 className="font-display text-[clamp(4rem,15vw,12rem)] leading-[0.85] tracking-wide text-white">
+            LEWIS<br />SOMES
+          </h1>
+
+          <div className="flex items-center gap-6 mt-8">
+            <a
+              href="#pack"
+              className="text-xs font-bold tracking-[0.15em] uppercase bg-red text-white px-7 py-3 hover:bg-red-dim transition-colors"
+            >
+              Ver el Pack
+            </a>
+            <span className="text-text-muted text-sm">
+              50 samples &mdash; Drums Kit Vol. 1
+            </span>
+          </div>
         </motion.div>
-      </motion.div>
+
+        {/* Scroll line */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.5 }}
+          className="absolute right-6 md:right-10 bottom-16 md:bottom-24 flex flex-col items-center gap-3"
+        >
+          <span className="text-[10px] tracking-[0.2em] uppercase text-text-muted [writing-mode:vertical-lr]">
+            Scroll
+          </span>
+          <motion.div
+            animate={{ scaleY: [0, 1, 0] }}
+            transition={{ repeat: Infinity, duration: 2, ease: 'easeInOut' }}
+            className="w-px h-12 bg-text-muted origin-top"
+          />
+        </motion.div>
+      </div>
     </section>
   )
 }

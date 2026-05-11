@@ -1,71 +1,122 @@
 import { motion } from 'framer-motion'
 
 const STRIPE_LINK = import.meta.env.VITE_STRIPE_LINK || '#comprar'
-
-const trustBadges = [
-  { icon: '⚡', label: 'Descarga instantánea' },
-  { icon: '🎵', label: 'WAV 24-bit' },
-  { icon: '✓', label: 'Royalty Free' },
-  { icon: '🔒', label: 'Pago seguro con Stripe' },
-]
+const BEATSTARS_LINK = import.meta.env.VITE_BEATSTARS_LINK || 'https://lewissomes.beatstars.com'
 
 export default function BuySection() {
   return (
-    <section id="comprar" className="py-24 md:py-32 px-6">
-      <div className="max-w-2xl mx-auto text-center">
-        {/* Glow */}
-        <div className="relative">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-accent/10 rounded-full blur-[100px] pointer-events-none" />
+    <section id="comprar" className="py-20 md:py-32">
+      <div className="max-w-[1400px] mx-auto px-6 md:px-10">
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className="text-text-muted text-[10px] tracking-[0.3em] uppercase mb-12"
+        >
+          03 / Comprar
+        </motion.p>
 
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1px_1fr] gap-12 lg:gap-0">
+          {/* Left — Sample Pack */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="relative z-10"
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:pr-16"
           >
-            <h2 className="text-3xl md:text-5xl font-black tracking-tight mb-4">
-              Consigue tu pack ahora
+            <h2 className="font-display text-[clamp(2rem,5vw,3.5rem)] tracking-wide text-white mb-2">
+              DRUMS KIT VOL. 1
             </h2>
-            <p className="text-text-muted text-lg mb-10">
-              50 sonidos exclusivos de reggaeton chileno, listos para usar en tu próxima producción.
+
+            <p className="text-text-muted mb-8 max-w-md">
+              50 sonidos exclusivos de reggaeton chileno, listos para usar en
+              tu próxima producción.
             </p>
 
             {/* Price */}
             <div className="mb-8">
-              {/* TODO(human): Set the final price — Lewis needs to confirm the amount */}
-              <span className="text-5xl md:text-6xl font-black">$XX</span>
-              <span className="text-text-muted text-lg ml-2">USD</span>
+              <span className="inline-block text-[10px] font-bold tracking-[0.3em] uppercase text-red mb-3">
+                Precio limitado
+              </span>
+              <div className="flex items-baseline gap-4">
+                <span className="font-display text-2xl text-text-muted line-through">
+                  $50.000
+                </span>
+                <span className="font-display text-[clamp(3rem,8vw,5rem)] leading-none text-white">
+                  $25.000
+                </span>
+                <span className="text-text-muted text-sm">CLP</span>
+              </div>
             </div>
 
-            {/* CTA */}
             <a
               href={STRIPE_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block bg-accent hover:bg-red-700 text-white font-bold text-lg px-10 py-4 rounded-full transition-all hover:shadow-[0_0_40px_var(--color-accent-glow)] hover:scale-105 active:scale-100"
+              className="inline-block bg-red text-white font-bold text-sm tracking-[0.15em] uppercase px-10 py-4 hover:bg-red-dim transition-colors"
             >
               Comprar Ahora
             </a>
 
-            {/* Trust badges */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
-              {trustBadges.map((badge) => (
-                <div
-                  key={badge.label}
-                  className="flex flex-col items-center gap-2 text-text-muted text-sm"
-                >
-                  <span className="text-xl">{badge.icon}</span>
-                  <span>{badge.label}</span>
-                </div>
-              ))}
+            {/* Details */}
+            <div className="mt-10 grid grid-cols-2 gap-y-4 gap-x-8 text-sm">
+              <div>
+                <p className="text-text-muted text-[10px] tracking-[0.2em] uppercase mb-1">Formato</p>
+                <p className="text-text">WAV 24-bit</p>
+              </div>
+              <div>
+                <p className="text-text-muted text-[10px] tracking-[0.2em] uppercase mb-1">Licencia</p>
+                <p className="text-text">Royalty Free</p>
+              </div>
+              <div>
+                <p className="text-text-muted text-[10px] tracking-[0.2em] uppercase mb-1">Entrega</p>
+                <p className="text-text">Descarga instantánea</p>
+              </div>
+              <div>
+                <p className="text-text-muted text-[10px] tracking-[0.2em] uppercase mb-1">Pago</p>
+                <p className="text-text">Stripe (seguro)</p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Divider */}
+          <div className="hidden lg:block bg-rule" />
+
+          {/* Right — BeatStars */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:pl-16 flex flex-col"
+          >
+            <h2 className="font-display text-[clamp(2rem,5vw,3.5rem)] tracking-wide text-white mb-2">
+              BEATS
+            </h2>
+
+            <p className="text-text-muted mb-8 max-w-md">
+              Explora la librería completa de beats de Lewis Somes en BeatStars.
+              Exclusivos, leases y más.
+            </p>
+
+            {/* Promo image */}
+            <div className="relative mb-8 flex-1 min-h-[200px]">
+              <img
+                src="/assets/full-rojo-FONDO.jpg.jpeg"
+                alt="Lewis Somes Beats"
+                className="w-full h-full object-cover max-h-[280px]"
+              />
             </div>
 
-            {/* Post-purchase info */}
-            <p className="text-text-muted/60 text-sm mt-10 max-w-md mx-auto">
-              Después de tu compra recibirás un link de descarga instantáneo.
-              Todos los sonidos en formato WAV de alta calidad.
-            </p>
+            <a
+              href={BEATSTARS_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block border border-rule text-text font-bold text-sm tracking-[0.15em] uppercase px-10 py-4 hover:border-red hover:text-red transition-colors self-start"
+            >
+              Ver en BeatStars
+            </a>
           </motion.div>
         </div>
       </div>
