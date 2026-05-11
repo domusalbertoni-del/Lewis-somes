@@ -9,7 +9,7 @@ const videos = [
 
 export default function VideoReel() {
   return (
-    <section className="py-20 md:py-32 overflow-hidden">
+    <section className="py-20 md:py-32">
       <div className="max-w-[1400px] mx-auto px-6 md:px-10">
         <motion.p
           initial={{ opacity: 0 }}
@@ -32,9 +32,13 @@ export default function VideoReel() {
       </div>
 
       {/* Horizontal scroll strip */}
-      <div className="flex justify-center gap-4 md:gap-6 px-6 md:px-10 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide"
-        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+      <div
+        className="flex gap-4 md:gap-6 overflow-x-auto pb-4 snap-x snap-mandatory"
+        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}
       >
+        {/* Left spacer to center on desktop */}
+        <div className="flex-shrink-0 w-6 md:w-10 lg:w-[calc((100vw-1400px)/2+40px)]" />
+
         {videos.map((src, i) => (
           <motion.div
             key={src}
@@ -67,6 +71,9 @@ export default function VideoReel() {
             </span>
           </motion.div>
         ))}
+
+        {/* Right spacer so last video scrolls fully into view */}
+        <div className="flex-shrink-0 w-6 md:w-10" />
       </div>
     </section>
   )
