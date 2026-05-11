@@ -16,6 +16,7 @@ export default function Navbar() {
   const links = [
     { label: 'Inicio', href: '#inicio' },
     { label: 'Pack', href: '#pack' },
+    { label: 'Merch', href: '#merch' },
     { label: 'Comprar', href: '#comprar' },
   ]
 

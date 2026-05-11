@@ -13,7 +13,7 @@ export default function BuySection() {
           viewport={{ once: true }}
           className="text-text-muted text-[10px] tracking-[0.3em] uppercase mb-12"
         >
-          03 / Comprar
+          06 / Comprar
         </motion.p>
 
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1px_1fr] gap-12 lg:gap-0">
