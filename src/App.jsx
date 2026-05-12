@@ -2,10 +2,10 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import PackShowcase from './components/PackShowcase'
 import SoundCategories from './components/SoundCategories'
+import BuySection from './components/BuySection'
 import DawCompatibility from './components/DawCompatibility'
 import VideoReel from './components/VideoReel'
 import Merch from './components/Merch'
-import BuySection from './components/BuySection'
 import Footer from './components/Footer'
 
 export default function App() {
@@ -16,10 +16,10 @@ export default function App() {
         <Hero />
         <PackShowcase />
         <SoundCategories />
+        <BuySection />
         <DawCompatibility />
         <VideoReel />
         <Merch />
-        <BuySection />
       </main>
       <Footer />
     </>

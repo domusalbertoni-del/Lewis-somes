@@ -1,8 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
-const STRIPE_LINK = import.meta.env.VITE_STRIPE_LINK || '#comprar'
-
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
@@ -45,14 +43,6 @@ export default function Navbar() {
               {link.label}
             </a>
           ))}
-          <a
-            href={STRIPE_LINK}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-xs font-bold tracking-[0.15em] uppercase bg-red text-white px-5 py-2 hover:bg-red-dim transition-colors"
-          >
-            Comprar
-          </a>
         </div>
 
         {/* Mobile toggle */}
@@ -87,14 +77,6 @@ export default function Navbar() {
                   {link.label.toUpperCase()}
                 </a>
               ))}
-              <a
-                href={STRIPE_LINK}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-red text-white font-bold text-sm tracking-[0.15em] uppercase px-6 py-3 text-center mt-2"
-              >
-                Comprar Ahora
-              </a>
             </div>
           </motion.div>
         )}
