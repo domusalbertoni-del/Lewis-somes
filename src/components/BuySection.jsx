@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
+import { buildCheckoutUrl } from '../lib/checkout'
 
-const STRIPE_LINK = import.meta.env.VITE_STRIPE_LINK || '#comprar'
+const CHECKOUT_HREF = buildCheckoutUrl()
 const BEATSTARS_LINK = import.meta.env.VITE_BEATSTARS_LINK || 'https://lewissomes.beatstars.com'
 
 export default function BuySection() {
@@ -51,9 +52,8 @@ export default function BuySection() {
             </div>
 
             <a
-              href={STRIPE_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={CHECKOUT_HREF}
+              data-testid="cta-comprar"
               className="inline-block bg-red text-white font-bold text-sm tracking-[0.15em] uppercase px-10 py-4 hover:bg-red-dim transition-colors"
             >
               Comprar Ahora
