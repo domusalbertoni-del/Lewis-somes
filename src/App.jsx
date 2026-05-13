@@ -6,6 +6,7 @@ import BuySection from './components/BuySection'
 import DawCompatibility from './components/DawCompatibility'
 import VideoReel from './components/VideoReel'
 import Merch from './components/Merch'
+import Contact from './components/Contact'
 import Footer from './components/Footer'
 
 export default function App() {
@@ -20,6 +21,7 @@ export default function App() {
         <DawCompatibility />
         <VideoReel />
         <Merch />
+        <Contact />
       </main>
       <Footer />
     </>

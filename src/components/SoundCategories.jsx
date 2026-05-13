@@ -1,12 +1,11 @@
 import { motion } from 'framer-motion'
 
 const categories = [
-  { name: 'Kick', count: 10, desc: 'Golpes potentes que marcan el ritmo' },
-  { name: 'Snare', count: 8, desc: 'Snares con carácter y punch' },
-  { name: 'FX', count: 8, desc: 'Efectos para transiciones y risers' },
-  { name: 'Voces', count: 8, desc: 'Ad-libs y chops vocales únicos' },
-  { name: 'Melody', count: 8, desc: 'Loops melódicos listos para usar' },
-  { name: 'Loops', count: 8, desc: 'Patrones rítmicos completos' },
+  { name: 'Kick', desc: 'Golpes potentes que marcan el ritmo' },
+  { name: 'Snare', desc: 'Snares con carácter y punch' },
+  { name: 'FX', desc: 'Efectos para transiciones y risers' },
+  { name: 'Melody', desc: 'Loops melódicos listos para usar' },
+  { name: 'Loops', desc: 'Patrones rítmicos completos' },
 ]
 
 export default function SoundCategories() {
@@ -41,7 +40,7 @@ export default function SoundCategories() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.06, ease: [0.16, 1, 0.3, 1] }}
-              className="group grid grid-cols-[auto_1fr_auto] md:grid-cols-[80px_200px_1fr_auto] items-center gap-4 md:gap-8 py-5 border-b border-rule hover:bg-surface transition-colors px-2 md:px-4 cursor-default"
+              className="group grid grid-cols-[auto_1fr] md:grid-cols-[80px_200px_1fr] items-center gap-4 md:gap-8 py-5 border-b border-rule hover:bg-surface transition-colors px-2 md:px-4 cursor-default"
             >
               {/* Number */}
               <span className="font-display text-3xl md:text-4xl text-rule group-hover:text-red transition-colors">
@@ -57,20 +56,8 @@ export default function SoundCategories() {
               <span className="hidden md:block text-sm text-text-muted">
                 {cat.desc}
               </span>
-
-              {/* Count */}
-              <span className="text-xs tracking-[0.15em] uppercase text-text-muted text-right">
-                {cat.count} <span className="hidden sm:inline">samples</span>
-              </span>
             </motion.div>
           ))}
-        </div>
-
-        {/* Total */}
-        <div className="flex justify-end mt-6">
-          <span className="text-red font-bold text-sm tracking-[0.1em]">
-            50 SAMPLES TOTAL
-          </span>
         </div>
       </div>
     </section>

@@ -11,11 +11,17 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  const SPOTIFY_LINK =
+    import.meta.env.VITE_SPOTIFY_LINK ||
+    'https://open.spotify.com/search/Lewis%20Somes'
+
   const links = [
     { label: 'Inicio', href: '#inicio' },
     { label: 'Pack', href: '#pack' },
     { label: 'Merch', href: '#merch' },
     { label: 'Comprar', href: '#comprar' },
+    { label: 'Contacto', href: '#contacto' },
+    { label: 'Grandes Éxitos', href: SPOTIFY_LINK, external: true },
   ]
 
   return (
@@ -38,6 +44,9 @@ export default function Navbar() {
             <a
               key={link.href}
               href={link.href}
+              {...(link.external
+                ? { target: '_blank', rel: 'noopener noreferrer' }
+                : {})}
               className="text-xs font-medium tracking-[0.15em] uppercase text-text-muted hover:text-text transition-colors"
             >
               {link.label}
@@ -71,6 +80,9 @@ export default function Navbar() {
                 <a
                   key={link.href}
                   href={link.href}
+                  {...(link.external
+                    ? { target: '_blank', rel: 'noopener noreferrer' }
+                    : {})}
                   onClick={() => setMenuOpen(false)}
                   className="font-display text-3xl tracking-wide text-text-muted hover:text-text transition-colors"
                 >

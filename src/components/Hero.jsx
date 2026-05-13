@@ -36,13 +36,13 @@ export default function Hero() {
 
           <div className="flex items-center gap-6 mt-8">
             <a
-              href="#pack"
+              href="#comprar"
               className="text-xs font-bold tracking-[0.15em] uppercase bg-red text-white px-7 py-3 hover:bg-red-dim transition-colors"
             >
-              Ver el Pack
+              Comprar Librería
             </a>
             <span className="text-text-muted text-sm">
-              50 samples &mdash; Drums Kit Vol. 1
+              Drums Kit Vol. 1
             </span>
           </div>
         </motion.div>

@@ -1,5 +1,9 @@
 import { motion } from 'framer-motion'
 
+const MERCH_LINK =
+  import.meta.env.VITE_MERCH_LINK ||
+  'https://www.toliv.com/store/merch-ls-7692'
+
 export default function Merch() {
   return (
     <section id="merch" className="py-20 md:py-32">
@@ -10,7 +14,7 @@ export default function Merch() {
           viewport={{ once: true }}
           className="text-text-muted text-[10px] tracking-[0.3em] uppercase mb-12"
         >
-          05 / Merch
+          05 / LS Merch Oficial
         </motion.p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-4 items-center">
@@ -52,26 +56,29 @@ export default function Merch() {
             </span>
 
             <h2 className="font-display text-[clamp(2.5rem,6vw,5rem)] leading-[0.9] tracking-wide mt-4 mb-6 text-white">
-              HOODIE<br />LEWIS SOMES
+              LS MERCH<br />OFICIAL
             </h2>
 
             <p className="text-text-muted leading-relaxed max-w-md mb-8">
-              Representa el movimiento. Hoodie oficial Lewis Somes — diseño exclusivo,
-              edición limitada. El uniforme del reggaeton chileno.
+              Hoodies, poleras y stickers oficiales. Diseño exclusivo,
+              edición limitada — el uniforme del reggaeton chileno.
             </p>
 
             <div className="flex gap-6 text-[11px] tracking-[0.15em] uppercase text-text-muted mb-10">
-              <span>Edición Limitada</span>
+              <span>Hoodies</span>
               <span className="text-rule">|</span>
-              <span>Envío Nacional</span>
+              <span>Poleras</span>
+              <span className="text-rule">|</span>
+              <span>Stickers</span>
             </div>
 
-            {/* TODO(human): Add merch purchase link when Lewis has his store set up */}
             <a
-              href="#comprar"
+              href={MERCH_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-block bg-red text-white font-bold text-sm tracking-[0.15em] uppercase px-10 py-4 hover:bg-red-dim transition-colors"
             >
-              Próximamente
+              Comprar Merch
             </a>
           </motion.div>
         </div>

@@ -17,7 +17,7 @@ export default function BuySection() {
           06 / Comprar
         </motion.p>
 
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1px_1fr] gap-12 lg:gap-0">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1px_1fr] gap-12 lg:gap-0 items-start">
           {/* Left — Sample Pack */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -27,13 +27,22 @@ export default function BuySection() {
             className="lg:pr-16"
           >
             <h2 className="font-display text-[clamp(2rem,5vw,3.5rem)] tracking-wide text-white mb-2">
-              DRUMS KIT VOL. 1
+              DRUMS KIT REGGAETON<br />CHILENO VOL. 1
             </h2>
 
             <p className="text-text-muted mb-8 max-w-md">
-              50 sonidos exclusivos de reggaeton chileno, listos para usar en
-              tu próxima producción.
+              Sonidos exclusivos de LEWIS SOMES, listos para usar en tu
+              próxima producción.
             </p>
+
+            {/* Pack image (pendrive en la librería) */}
+            <div className="relative mb-8 max-w-sm">
+              <img
+                src="/assets/DRUMS-KIT-.jpg.jpeg"
+                alt="Pack Drums Kit Lewis Somes"
+                className="w-full h-auto object-contain"
+              />
+            </div>
 
             {/* Price */}
             <div className="mb-8">
@@ -77,7 +86,7 @@ export default function BuySection() {
               </div>
               <div>
                 <p className="text-text-muted text-[10px] tracking-[0.2em] uppercase mb-1">Pago</p>
-                <p className="text-text">Stripe (seguro)</p>
+                <p className="text-text">Pago vía TOLIV</p>
               </div>
             </div>
           </motion.div>
@@ -91,7 +100,7 @@ export default function BuySection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:pl-16 flex flex-col"
+            className="lg:pl-16"
           >
             <h2 className="font-display text-[clamp(2rem,5vw,3.5rem)] tracking-wide text-white mb-2">
               BEATS
@@ -103,11 +112,11 @@ export default function BuySection() {
             </p>
 
             {/* Promo image */}
-            <div className="relative mb-8 flex-1 min-h-[200px]">
+            <div className="relative mb-8">
               <img
                 src="/assets/full-rojo-FONDO.jpg.jpeg"
                 alt="Lewis Somes Beats"
-                className="w-full h-full object-cover max-h-[280px]"
+                className="w-full object-cover max-h-[280px]"
               />
             </div>
 
@@ -115,7 +124,7 @@ export default function BuySection() {
               href={BEATSTARS_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block border border-rule text-text font-bold text-sm tracking-[0.15em] uppercase px-10 py-4 hover:border-red hover:text-red transition-colors self-start"
+              className="inline-block border border-rule text-text font-bold text-sm tracking-[0.15em] uppercase px-10 py-4 hover:border-red hover:text-red transition-colors"
             >
               Ver en BeatStars
             </a>

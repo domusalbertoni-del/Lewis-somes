@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="flex items-center gap-8">
           {[
             { label: 'Instagram', href: 'https://instagram.com/lewisSomes' },
-            { label: 'TikTok', href: 'https://tiktok.com/@lewisSomes' },
+            { label: 'TikTok', href: 'https://www.tiktok.com/@lewis_somes' },
             { label: 'YouTube', href: 'https://youtube.com/@lewisSomes' },
             { label: 'BeatStars', href: 'https://lewissomes.beatstars.com' },
           ].map((link) => (

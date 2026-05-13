@@ -11,7 +11,7 @@ export default function PackShowcase() {
           viewport={{ once: true }}
           className="text-text-muted text-[10px] tracking-[0.3em] uppercase mb-12"
         >
-          01 / El Pack
+          01 / Reggaeton Chileno
         </motion.p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-4 items-center">
@@ -22,11 +22,11 @@ export default function PackShowcase() {
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           >
-            <div className="relative aspect-square max-w-lg">
+            <div className="relative max-w-lg">
               <img
-                src="/assets/DRUMS-KIT-.jpg.jpeg"
+                src="/assets/NEW-LIBRERIA-LEWIS-SOMES.4.jpg.jpeg"
                 alt="Drums Kit Lewis Somes"
-                className="w-full h-full object-cover"
+                className="w-full h-auto object-contain"
               />
               {/* Red corner accent */}
               <div className="absolute top-0 right-0 w-16 h-16">
@@ -49,7 +49,7 @@ export default function PackShowcase() {
             className="md:pl-8"
           >
             <span className="text-red text-[10px] font-bold tracking-[0.3em] uppercase">
-              50 Sonidos Exclusivos
+              Sonidos Exclusivos
             </span>
 
             <h2 className="font-display text-[clamp(2.5rem,6vw,5rem)] leading-[0.9] tracking-wide mt-4 mb-6 text-white">
@@ -57,7 +57,7 @@ export default function PackShowcase() {
             </h2>
 
             <p className="text-text-muted leading-relaxed max-w-md mb-8">
-              Desbloquea el sonido que llevas dentro. 50 samples cuidadosamente
+              Desbloquea el sonido que llevas dentro. Samples cuidadosamente
               seleccionados para producir reggaeton con el sello chileno que
               define a Lewis Somes.
             </p>
