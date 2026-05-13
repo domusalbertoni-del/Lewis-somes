@@ -53,6 +53,8 @@ export default function BuySection() {
 
             <a
               href={CHECKOUT_HREF}
+              target="_blank"
+              rel="noopener noreferrer"
               data-testid="cta-comprar"
               className="inline-block bg-red text-white font-bold text-sm tracking-[0.15em] uppercase px-10 py-4 hover:bg-red-dim transition-colors"
             >

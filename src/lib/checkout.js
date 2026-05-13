@@ -104,5 +104,5 @@ export function encodePrefill(data) {
 
 export function buildCheckoutUrl() {
   const payload = { orders: [PRODUCT_ORDER], branch_office: BRANCH_OFFICE }
-  return `${CHECKOUT_URL}?prefill=${encodePrefill(payload)}`
+  return `${CHECKOUT_URL}#prefill=${encodePrefill(payload)}`
 }
